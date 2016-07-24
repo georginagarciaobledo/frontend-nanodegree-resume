@@ -5,8 +5,11 @@
 //console.log(funThoughts);
 //$("#main").append(funThoughts);
 
-var formattedName = HTMLheaderName.replace("%data%", "Georgina Garcia-Obledo");
-$("#header").append(formattedName);
+var name = "Georgina Garcia-Obledo";
+var role = "Product Manager";
 
-var formattedRole = HTMLheaderRole.replace("%data%", "Product Manager");
+var formattedName = HTMLheaderName.replace("%data%", name);
+var formattedRole = HTMLheaderRole.replace("%data%", role);
+
+$("#header").append(formattedName);
 $("#header").append(formattedRole);
