@@ -9,7 +9,7 @@
 
  	},
  	"welcomeMessage" : "Welcome, catchy intro blah blah blah.",
- 	"skills" : ["UX research", "coordination", "data analysis"],
+ 	"skills" : ["UX research"," coordination"," data analysis"],
  	"biopic" : "images/headshot.jpg",
  	//"display" : "function taking no parameters"
  };
@@ -22,6 +22,7 @@ var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
 var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
 var formattedBioPic = HTMLbioPic.replace("%data%",bio.biopic);
 var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
+var formattedSkills = HTMLskills.replace("%data%",bio.skills);
 
 
 $("#header").prepend(formattedRole);
@@ -33,3 +34,4 @@ $("#header").append(formattedGithub);
 $("#header").append(formattedLocation);
 $("#header").append(formattedBioPic);
 $("#header").append(formattedWelcomeMsg);
+$("#header").append(formattedSkills);
