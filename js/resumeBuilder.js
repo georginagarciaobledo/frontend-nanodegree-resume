@@ -36,31 +36,19 @@ $("#header").append(formattedBioPic);
 $("#header").append(formattedWelcomeMsg);
 $("#header").append(formattedSkills);
 
-
 var work = {};
 
-work.position = "Customer Success Intern";
-work.employer = "Cocoon Cam";
-work.yearsWorked = 0.17;
-work.city = "San Francisco";
+work.jobs = [];
 
-var education = {};
+work.jobs[0] = {
+	"title": "Intern"
 
-education["name"] = "Occidental College";
-education["yearsAttended"] = "2014-Present"
-education["city"] = "Los Angeles";
+};
 
-$("#main").append(work["position"]);
-$("#main").append(education.name);
-
-
-
-
-
+$("#main").append(work.jobs[0].title);
 
 /*
-var work = {
-	"jobs": [
+work.j
 				{
 					"employer": "Cocoon Cam",
 					"title": "Customer Success Intern",
