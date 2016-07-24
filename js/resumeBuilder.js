@@ -1,35 +1,27 @@
-// $("#main").append("Georgina Garcia-Obledo");
-//var awesomeThoughts = "I am Georgina, and I am AWESOME!";
-//console.log(awesomeThoughts);
-//var funThoughts = awesomeThoughts.replace("AWESOME","FUN");
-//console.log(funThoughts);
-//$("#main").append(funThoughts);
+ var bio = {
+ 	"name" : "Georgina Garcia-Obledo",
+ 	"role" : "Product Manager",
+ 	"contacts" : {
+ 		"mobile" : "415.555.5555",
+ 		"email" : "georgina376@gmail.com",
+ 		"github" : "georginagarciaobledo",
+ 		"location" : "San Francisco/Los Angeles",
 
-var name = "Georgina Garcia-Obledo";
-var role = "Product Manager";
-var email = "georgina376@gmail.com";
-var github = "georginagarciaobledo";
-//var location = ["San Francisco", "Los Angeles"];
-var skills = ["research", "planning"];
-//var pic = "images/headshot.jpg";
-//var welcome = "Welcome to my interactive resume."
+ 	},
+ 	"welcomeMessage" : "Welcome to my interactive resume.",
+ 	"skills" : ["UX research", "coordination", "data analysis"],
+ 	"biopic" : "images/headshot.jpg",
+ 	//"display" : "function taking no parameters"
+ };
 
-var formattedName = HTMLheaderName.replace("%data%", name);
-var formattedRole = HTMLheaderRole.replace("%data%", role);
-var formattedEmail = HTMLemail.replace("%data%", email);
-var formattedGithub = HTMLgithub.replace("%data%", github);
-//var formattedLocation = HTMLlocation.replace("%data%", location);
-var formattedSkills = HTMLskills.replace("%data", skills);
-//var formattedPic = HTMLbioPic.replace("%data%", pic);
-//var foramttedWelcomeMsg = HTMLwelcomeMsg.("%data%", welcome);
+var formattedName = HTMLheaderName.replace("%data%",bio.name);
+var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
+var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
+var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
+
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
-$("#main").append(formattedEmail);
-$("#main").append(formattedGithub);
-//$("#main").append(formattedLocation);
-$("#main").append(formattedSkills);
 
-
-
-
+$("#header").append(formattedMobile);
+$("#header").append(formattedEmail);
