@@ -5,13 +5,13 @@ var bio = {
  		"mobile": "415.555.5555",
  		"email": "georgina376@gmail.com",
  		"github": "georginagarciaobledo",
- 		"location": "San Francisco and Los Angeles",
+ 		"location": "San Francisco",
  	},
  	"welcomeMessage": "Welcome, catchy intro blah blah blah.",
  	"skills": [
  		"UX research"," coordination"," data analysis"
  	],
- 	"bioPic": "images/headshot.jpg",
+ 	"bioPic": "images/headshot.jpg"
 };
 
 bio.display = function() {
@@ -19,10 +19,29 @@ bio.display = function() {
 	$("#header").prepend(formattedRole);
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	$("#header").prepend(formattedName);
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#topContacts").append(formattedMobile);
+	$("#footerContacts").append(formattedMobile);
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#topContacts").append(formattedEmail);
+	$("#footerContacts").append(formattedEmail);
+	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#topContacts").append(formattedGithub);
+	$("#footerContacts").append(formattedGithub);
+	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+	$("#topContacts").append(formattedLocation);
+	$("#footerContacts").append(formattedLocation);
+	var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+	$("#header").append(formattedBioPic);
+	var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+	$("#header").append(formattedWelcomeMsg);
+	$("#header").append(HTMLskillsStart);
+	for (skill in bio.skills) {
+		var formattedSkill = HTMLskills.replace("%data%", bio.skills[skill]);
+		$("#header").append(formattedSkill);
+	}
 };
 
-
-bio.display();
 
 var work = {
 	"jobs": [
@@ -89,13 +108,17 @@ var projects = {
 			"title": "Portfolio Project",
 			"dates": "July 2016",
 			"description": "Made an online portfolio.", 
-			"images": []
+			"images": [
+				"images/fog.jpg", "images/dragonfruit.jpg"
+			]
 		},
 		{
 			"title": "Animal Trading Card",
 			"dates": "June 2016",
 			"description": "Made a trading card based on a picture.",
-			"images": []
+			"images": [
+				"images/tardigrade.jpg"
+			]
 		},
 	]
 };
@@ -209,3 +232,5 @@ function inName(name) {
 }
 
 $("#main").append(internationalizeButton);
+
+bio.display();
