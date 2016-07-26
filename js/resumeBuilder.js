@@ -1,42 +1,4 @@
- var bio = {
- 	"name" : "Georgina Garcia-Obledo",
- 	"role" : "Product Manager",
- 	"contacts" : {
- 		"mobile" : "415.555.5555",
- 		"email" : "georgina376@gmail.com",
- 		"github" : "georginagarciaobledo",
- 		"location" : "San Francisco and Los Angeles",
-
- 	},
- 	"welcomeMessage" : "Welcome, catchy intro blah blah blah.",
- 	"skills" : ["UX research"," coordination"," data analysis"],
- 	"biopic" : "images/headshot.jpg",
- 	//"display" : "function taking no parameters"
- };
-
-var formattedName = HTMLheaderName.replace("%data%",bio.name);
-var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
-var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
-var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
-var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
-var formattedBioPic = HTMLbioPic.replace("%data%",bio.biopic);
-var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%",bio.welcomeMessage);
-var formattedSkills = HTMLskills.replace("%data%",bio.skills);
-
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
-
-$("#header").append(formattedMobile);
-$("#header").append(formattedEmail);
-$("#header").append(formattedGithub);
-$("#header").append(formattedLocation);
-$("#header").append(formattedBioPic);
-$("#header").append(formattedWelcomeMsg);
-$("#header").append(formattedSkills);
-
-/*
+ //Work Object Below:
 var work = {};
 
 work.jobs = [];
@@ -83,6 +45,47 @@ work.jobs[4] = {
 
 //work.display = function taking no parameters
 
+//Projects Object Below:
+var projects = {}; 
+
+projects.projects = []; 
+
+projects.projects[0] = {
+	"title": "Portfolio Project",
+	"dates": "July 2016",
+	"description": "Made an online portfolio.", 
+	"images": ["picture1.jpg", "picture2.jpg"]
+};
+
+projects.projects[1] = {
+	"title": "Animal Trading Card",
+	"dates": "June 2016",
+	"description": "Made a trading card based on a picture.",
+	"images": ["pictures.jpg", "pictures2.jpg"]
+}
+//projects.display = function taking no parameters
+
+
+ //Bio Object Below: 
+ var bio = {
+ 	"name" : "Georgina Garcia-Obledo",
+ 	"role" : "Product Manager",
+ 	"contacts" : {
+ 		"mobile" : "415.555.5555",
+ 		"email" : "georgina376@gmail.com",
+ 		"github" : "georginagarciaobledo",
+ 		"location" : "San Francisco and Los Angeles",
+
+ 	},
+ 	"welcomeMessage" : "Welcome, catchy intro blah blah blah.",
+ 	"skills" : ["UX research"," coordination"," data analysis"],
+ 	"biopic" : "images/headshot.jpg",
+ 	//"display" : "function taking no parameters"
+ };
+
+
+
+//Education Object Below:
 var education = {};
 
 education.schools = [];
@@ -91,27 +94,27 @@ education.schools[0] = {
 	"name": "Occidental College",
 	"location": "Los Angeles, CA",
 	"degree": "B.A., Expected May 21, 2017",
-	"majors": "Economics Major, Mathematics Minor",
 	"dates": "2014-2017",
-	"url": "www.oxy.edu"
+	"url": "www.oxy.edu",
+	"majors": ["Economics Major, Mathematics Minor"]
 };
 
 education.schools[1] = {
 	"name": "City College of San Francisco",
 	"location": "San Francisco, CA",
 	"degree": "none",
-	"majors": "Coursework in German, Bookbinding",
 	"dates": "2013-2014",
-	"url": "www.ccsf.edu"
+	"url": "www.ccsf.edu",
+	"majors": ["Coursework in German, Bookbinding"]
 };
 
 education.schools[2] = {
 	"name": "Harvard University",
 	"location": "Cambridge, MA",
 	"degree": "Harvard College Class of 2015",
-	"majors": "Coursework in . Working toward B.A. but transferred to Occidental College",
 	"dates": "2011-2012",
-	"url": "www.harvard.edu"
+	"url": "www.harvard.edu",
+	"majors": ["Coursework in...", "Working toward B.A. but transferred to Occidental College"]
 };
 
 education.onlineCourses" = [];
@@ -125,4 +128,4 @@ education.onlineCourses[0] = {
 
 //education.display = function taking no parameters
 
-*/
+
