@@ -1,3 +1,4 @@
+/*
  //Bio Object Below: 
  var bio = {
  	"name": "Georgina Garcia-Obledo",
@@ -14,7 +15,6 @@
  	],
  	"bioPic": "images/headshot.jpg",
  }
-
 
 //Education Object Below:
 var education = {
@@ -52,7 +52,9 @@ var education = {
 			"url": "www.udacity.com"
 		}
 	]
-}
+};
+*/
+
 
 //Work Object Below:
 var work = {
@@ -61,21 +63,21 @@ var work = {
 			"employer": "Cocoon Cam",
 			"title": "Customer Success Intern",
 			"location": "San Francisco, CA",
-			"dates": "June 2016-Present",
+			"dates": "June 2016 - Present",
 			"description": "This is what I do. Here is our website: www.cocooncam.com"
 		},
 		{
 			"employer": "Occidental College",
 			"title": "Managing Editor, La Encina Yearbook",
 			"location": "San Francisco, CA",
-			"dates": "May 2016-Present",
+			"dates": "May 2016 - Present",
 			"description": "This is what I do. Here is our website: www.oxy.edu/la-encina"
 		},
 		{
 			"employer": "Occidental College",
 			"title": "Economics Students Association",
 			"location": "San Francisco, CA",
-			"dates": "May 2016-Present",
+			"dates": "May 2016 - Present",
 			"description": "This is what I do. Here is our website: ..."
 		},
 		{
@@ -89,12 +91,13 @@ var work = {
 			"employer": "Cullinane Construction",
 			"title": "Admin Assistant",
 			"location": "San Francisco, CA",
-			"dates": "December 2013-Present",
+			"dates": "December 2013 - Present",
 			"description": "This is what I do. I worked here full time December 2013-July 2014. Now part-time."
 		}
 	]
-}	
+};	
 
+/*
 //Projects Object Below:
 var projects = {
 	"projects": [
@@ -111,4 +114,41 @@ var projects = {
 			"images": ["pictures.jpg", "pictures2.jpg"]
 		},
 	]
+};
+*/
+function displayWork() {
+	for (job in work.jobs) {
+		$("#workExperience").append(HTMLworkStart);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
+		$(".work-entry:last").append(formattedEmployerTitle);
+
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		$(".work-entry:last").append(formattedDates);
+
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$(".work-entry:last").append(formattedDescription);
+	}
 }
+
+displayWork();
+
+$(document).click(function(loc) {
+	var x = loc.pageX;
+	var y = loc.pageY;
+	logClicks(x,y);
+});
+
+function locationizer(work_obj) {
+	var locationArray = [];
+
+	for(job in work_obj.jobs) {
+		var newLocation = work_obj.jobs[job].location;
+		locationArray.push(newLocation);
+	}
+
+	return locationArray;
+};
+
+console.log(locationizer(work));
