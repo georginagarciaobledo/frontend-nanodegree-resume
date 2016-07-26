@@ -1,6 +1,4 @@
-/*
- //Bio Object Below: 
- var bio = {
+var bio = {
  	"name": "Georgina Garcia-Obledo",
  	"role": "Product Manager",
  	"contacts": {
@@ -14,11 +12,17 @@
  		"UX research"," coordination"," data analysis"
  	],
  	"bioPic": "images/headshot.jpg",
- }
+};
 
-//Education Object Below:
-*/
+bio.display = function() {
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+	$("#header").prepend(formattedRole);
+	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	$("#header").prepend(formattedName);
+};
 
+
+bio.display();
 
 var work = {
 	"jobs": [
