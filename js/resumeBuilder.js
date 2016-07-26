@@ -17,13 +17,112 @@
  }
 
 //Education Object Below:
+*/
+
+
+var work = {
+	"jobs": [
+		{
+			"employer": "Cocoon Cam",
+			"title": "Customer Success Intern",
+			"location": "San Francisco, CA",
+			"dates": "June 2016 - Present",
+			"description": "This is what I do. Here is our website: www.cocooncam.com"
+		},
+		{
+			"employer": "Occidental College",
+			"title": "Managing Editor, La Encina Yearbook",
+			"location": "Los Angeles, CA",
+			"dates": "May 2016 - Present",
+			"description": "This is what I do. Here is our website: www.oxy.edu/la-encina"
+		},
+		{
+			"employer": "Occidental College",
+			"title": "Economics Students Association",
+			"location": "Los Angeles, CA",
+			"dates": "May 2016 - Present",
+			"description": "This is what I do. Here is our website: ..."
+		},
+		{
+			"employer": "Koru@Facebook",
+			"title": "Program Participant",
+			"location": "San Francisco, CA",
+			"dates": "July 2015",
+			"description": "This is what I do. Here is our website: joinkoru.com"
+		},
+		{
+			"employer": "Cullinane Construction",
+			"title": "Admin Assistant",
+			"location": "San Francisco, CA",
+			"dates": "December 2013 - Present",
+			"description": "This is what I do. I worked here full time December 2013-July 2014. Now part-time."
+		}
+	]
+};	
+
+work.display = function() {
+	for (job in work.jobs) {
+		$("#workExperience").append(HTMLworkStart);
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
+		$(".work-entry:last").append(formattedEmployerTitle);
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		$(".work-entry:last").append(formattedLocation);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		$(".work-entry:last").append(formattedDates);
+		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$(".work-entry:last").append(formattedDescription);
+	}
+};
+
+work.display();
+
+
+var projects = {
+	"projects": [
+		{
+			"title": "Portfolio Project",
+			"dates": "July 2016",
+			"description": "Made an online portfolio.", 
+			"images": []
+		},
+		{
+			"title": "Animal Trading Card",
+			"dates": "June 2016",
+			"description": "Made a trading card based on a picture.",
+			"images": []
+		},
+	]
+};
+
+projects.display = function() {
+	for (project in projects.projects) {
+		$("#projects").append(HTMLprojectStart);
+		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+		$(".project-entry:last").append(formattedTitle);
+		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);
+		if (projects.projects[project].images.length > 0){
+			for (image in projects.projects[project].images) {
+				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+				$(".project-entry:last").append(formattedImage);
+			}
+		}
+	}
+};
+
+projects.display();
+
 var education = {
-	"schools: [
+	"schools": [
 		{
 			"name": "Occidental College",
 			"location": "Los Angeles, CA",
 			"degree": "B.A., Expected May 21, 2017",
-			"majors": ["Economics Major, Mathematics Minor"]
+			"majors": ["Economics Major, Mathematics Minor"],
 			"dates": "2014-2017",
 			"url": "www.oxy.edu"
 		},
@@ -53,102 +152,56 @@ var education = {
 		}
 	]
 };
-*/
 
-
-//Work Object Below:
-var work = {
-	"jobs": [
-		{
-			"employer": "Cocoon Cam",
-			"title": "Customer Success Intern",
-			"location": "San Francisco, CA",
-			"dates": "June 2016 - Present",
-			"description": "This is what I do. Here is our website: www.cocooncam.com"
-		},
-		{
-			"employer": "Occidental College",
-			"title": "Managing Editor, La Encina Yearbook",
-			"location": "San Francisco, CA",
-			"dates": "May 2016 - Present",
-			"description": "This is what I do. Here is our website: www.oxy.edu/la-encina"
-		},
-		{
-			"employer": "Occidental College",
-			"title": "Economics Students Association",
-			"location": "San Francisco, CA",
-			"dates": "May 2016 - Present",
-			"description": "This is what I do. Here is our website: ..."
-		},
-		{
-			"employer": "Koru@Facebook",
-			"title": "Program Participant",
-			"location": "San Francisco, CA",
-			"dates": "July 2015",
-			"description": "This is what I do. Here is our website: joinkoru.com"
-		},
-		{
-			"employer": "Cullinane Construction",
-			"title": "Admin Assistant",
-			"location": "San Francisco, CA",
-			"dates": "December 2013 - Present",
-			"description": "This is what I do. I worked here full time December 2013-July 2014. Now part-time."
-		}
-	]
-};	
-
-/*
-//Projects Object Below:
-var projects = {
-	"projects": [
-		{
-			"title": "Portfolio Project",
-			"dates": "July 2016",
-			"description": "Made an online portfolio.", 
-			"images": ["picture1.jpg", "picture2.jpg"]
-		},
-		{
-			"title": "Animal Trading Card",
-			"dates": "June 2016",
-			"description": "Made a trading card based on a picture.",
-			"images": ["pictures.jpg", "pictures2.jpg"]
-		},
-	]
-};
-*/
-function displayWork() {
-	for (job in work.jobs) {
-		$("#workExperience").append(HTMLworkStart);
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		var formattedEmployerTitle = formattedEmployer + formattedTitle;
-		$(".work-entry:last").append(formattedEmployerTitle);
-
-		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		$(".work-entry:last").append(formattedDates);
-
-		var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-		$(".work-entry:last").append(formattedDescription);
+education.display = function() {
+	for (school in education.schools){
+		$("#education").append(HTMLschoolStart);
+		var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		var formattedNameDegree = formattedName + formattedDegree;
+		$(".education-entry:last").append(formattedNameDegree);
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		$(".education-entry:last").append(formattedLocation);
+		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+		$(".education-entry:last").append(formattedDates);
+		var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+		$(".education-entry:last").append(formattedMajors);
+	};
+	$("#education").append(HTMLonlineClasses);
+	for (course in education.onlineCourses){
+		$("#education").append(HTMLschoolStart);
+		var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+		var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+		var formattedTitleSchool = formattedTitle + formattedSchool;
+		$(".education-entry:last").append(formattedTitleSchool);
+		var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+		$(".education-entry:last").append(formattedDates);
+		var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+		$(".education-entry:last").append(formattedURL);
 	}
-}
+};
 
-displayWork();
+education.display();
 
-$(document).click(function(loc) {
-	var x = loc.pageX;
-	var y = loc.pageY;
-	logClicks(x,y);
-});
 
 function locationizer(work_obj) {
 	var locationArray = [];
-
 	for(job in work_obj.jobs) {
 		var newLocation = work_obj.jobs[job].location;
 		locationArray.push(newLocation);
 	}
-
 	return locationArray;
 };
 
-console.log(locationizer(work));
+$("#mapDiv").append(googleMap);
+
+function inName(name) {
+	name = name.trim().split(" ");
+	console.log(name);
+	name[1] = name[1].toUpperCase();
+	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+
+	return name[0] + " " + name[1];
+}
+
+$("#main").append(internationalizeButton);
