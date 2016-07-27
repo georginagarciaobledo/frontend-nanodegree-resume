@@ -1,3 +1,5 @@
+/*used coolors.co to find colors and color descriptions*/
+
 body,
 div,
 ul,
@@ -26,7 +28,8 @@ h6 {
 
 h1 {
     font-size: 40px;
-    color: #f5a623; /*hideous oxy orange*/
+    color: #f49090;
+ /*tulip*/
     line-height: 48px;
     display: inline;
 }
@@ -34,7 +37,8 @@ h1 {
 h2 {
     font-weight: bold;
     font-size: 24px;
-    color: #999; /*gray*/
+    color: #8a8d91;
+ /*roman silver*/
     line-height: 29px;
     padding: 10px;
 }
@@ -42,14 +46,16 @@ h2 {
 h3 {
     font-style: italic;
     font-size: 20px;
-    color: #000; /*black*/
+    color: #000;
+ /*black*/
     line-height: 22px;
 }
 
 h4 {
     font-weight: bold;
     font-size: 14px;
-    color: #4a4a4a; /*dark grey*/
+    color: #565857;
+ /*dark grey*/
     line-height: 17px;
 }
 
@@ -63,7 +69,8 @@ h5 {
 .date-text {
     font-style: italic;
     font-size: 14px;
-    color: #999; /*grey*/
+    color: #8a8d91;
+ /*roman silver*/
     line-height: 16px;
     float: left;
 }
@@ -71,19 +78,21 @@ h5 {
 .location-text {
     font-style: italic;
     font-size: 14px;
-    color: #999; /*grey*/
+    color: #8a8d91;
+ /*roman silver*/
     line-height: 16px;
     float: right;
 }
 
 p {
     font-size: 14px;
-    color: #333; /*dark dark grey*/
+    color: #565857;
+ /*davy's grey*/
     line-height: 21px;
 }
 
 a {
-    color: #1199c3; /*udacity blue*/
+    color: #48639c; /*queen blue*/
     text-decoration: none;
     margin-top: 10px;
     display: block;
@@ -92,41 +101,43 @@ a {
 .welcome-message {
     font-style: italic;
     font-size: 18px;
-    color: #f3f3f3; /*off white*/
+    color: #f4f4f4; /*anti-flash white*/
     line-height: 28px;
 }
 
 #skills-h3 {
-    color: #f5ae23; /*ugly orange*/
+    color: #f4d0d0; /*champagne pink*/
     display: none;
 }
 
-.orange {
-    background-color: #f5ae23; /*ugly orange*/
+.pink {
+    background-color: #f4d0d0; /*champagne pink*/
 }
 
-.orange-text {
-    color: #f5ae23; /*ugly orange*/
+.pink-text {
+    color: #f4d0d0; /*champagne pink*/
 }
 
 .white-text {
     font-weight: bold;
-    color: #fff; /*white*/
+    color: #bcbdc0; /*gray (x11 gray)*/
 }
 
 .gray {
-    background-color: #f3f3f3; /*offwhite*/
+    background-color: #f4f4f4; /*anti-flash white*/
     padding-bottom: 10px;
     clear: both;
 }
 
 .dark-gray {
-    background-color: #4a4a4a; /*darkgrey*/
+    background-color: #565857; /*davy's grey*/
+    ;
 }
 
 /* TODO: Replace with image later */
 #header {
-    background-color: #484848; /*another dark grey*/
+    background-color: #565857;
+ /*davy's grey*/
 }
 
 .flex-box {
@@ -136,6 +147,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 10px;
+    color: #f4d0d0;/*champagne pink*/
 }
 
 .flex-column {
