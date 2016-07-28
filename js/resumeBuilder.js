@@ -11,7 +11,7 @@ var bio = {
     "skills": [
         "UX research", " coordination", " data analysis"
     ],
-    "bioPic": "images/headshot.jpg"
+    "biopic": "images/headshot.jpg"
 };
 
 bio.display = function() {
@@ -31,7 +31,7 @@ bio.display = function() {
     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
     $("#topContacts").append(formattedLocation);
     $("#footerContacts").append(formattedLocation);
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
     $("#header").append(formattedBioPic);
     var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $("#header").append(formattedWelcomeMsg);
